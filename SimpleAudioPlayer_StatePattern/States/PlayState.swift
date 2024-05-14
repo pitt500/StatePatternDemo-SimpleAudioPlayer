@@ -18,6 +18,9 @@ struct PlayState: State {
         case .pausing:
             print("Pausing Audio")
             return PauseState()
+        case .rewinding:
+            print("Rewinding...")
+            return RewindState()
         default:
             return self
         }

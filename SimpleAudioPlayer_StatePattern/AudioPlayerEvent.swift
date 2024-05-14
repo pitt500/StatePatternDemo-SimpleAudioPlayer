@@ -11,4 +11,5 @@ enum AudioPlayerEvent: Hashable {
     case stopping
     case pausing
     case playing
+    case rewinding
 }

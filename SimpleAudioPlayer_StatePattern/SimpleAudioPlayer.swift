@@ -21,4 +21,8 @@ class SimpleAudioPlayer {
     func pause() {
         machine.handle(event: .pausing)
     }
+    
+    func rewind() {
+        machine.handle(event: .rewinding)
+    }
 }

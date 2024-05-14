@@ -67,6 +67,27 @@ final class SimpleAudioPlayer_StatePatternTest: XCTestCase {
         XCTAssertNotNil(actual as? PlayState, "Invalid Transition found. This is a bug in your logic. The expected type is \(type(of: expected)).")
     }
     
+    func testFromPlayToRewind() {
+        let expected = RewindState()
+        
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .rewinding)
+        let actual = stateMachine.currentState
+        
+        XCTAssertNotNil(actual as? RewindState, "Invalid Transition found. This is a bug in your logic. The expected type is \(type(of: expected)).")
+    }
+    
+    func testFromRewindToPlay() {
+        let expected = PlayState()
+        
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .rewinding)
+        stateMachine.handle(event: .playing)
+        let actual = stateMachine.currentState
+        
+        XCTAssertNotNil(actual as? PlayState, "Invalid Transition found. This is a bug in your logic. The expected type is \(type(of: expected)).")
+    }
+    
     // MARK: Invalid States
     func testFromStopToPause() {
         let expected = StopState()

@@ -14,4 +14,8 @@ audioPlayer.pause()
 audioPlayer.play()
 audioPlayer.stop()
 audioPlayer.stop()
+audioPlayer.rewind()
+audioPlayer.rewind()
+audioPlayer.play()
+audioPlayer.rewind()
 
