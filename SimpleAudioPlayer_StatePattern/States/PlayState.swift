@@ -25,6 +25,7 @@ struct PlayState: State {
             print("Fast Forwarding...")
             return FastForwardState()
         default:
+            print("[Invalid Transition for \(self)] - \(event)")
             return self
         }
     }

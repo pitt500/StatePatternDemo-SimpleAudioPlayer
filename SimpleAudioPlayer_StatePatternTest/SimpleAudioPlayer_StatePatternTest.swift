@@ -110,12 +110,54 @@ final class SimpleAudioPlayer_StatePatternTest: XCTestCase {
     }
     
     // MARK: Invalid States
-    func testFromStopToPause() {
+    func testFromStopToPause_InvalidState() {
         let expected = StopState()
         
         stateMachine.handle(event: .pausing)
         let actual = stateMachine.currentState
         
         XCTAssertNotNil(actual as? StopState, "Invalid Transition found. This is a bug in your logic. The expected type is \(type(of: expected)).")
+    }
+    
+    func testDuplicatedTransitions() {
+        let expected = RewindState()
+        
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .rewinding)
+        let actual = stateMachine.currentState
+        
+        XCTAssertNotNil(actual as? RewindState, "Invalid Transition found. This is a bug in your logic. The expected type is \(type(of: expected)).")
+    }
+    
+    func testRewind_InvalidTransition() {
+        let expected = RewindState()
+        
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .rewinding)
+        stateMachine.handle(event: .stopping)
+        stateMachine.handle(event: .pausing)
+        stateMachine.handle(event: .forwarding)
+        let actual = stateMachine.currentState
+        
+        XCTAssertNotNil(actual as? RewindState, "Invalid Transition found. This is a bug in your logic. The expected type is \(type(of: expected)).")
+    }
+    
+    func testFastForward_InvalidTransition() {
+        let expected = FastForwardState()
+        
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .forwarding)
+        stateMachine.handle(event: .stopping)
+        stateMachine.handle(event: .pausing)
+        stateMachine.handle(event: .rewinding)
+        let actual = stateMachine.currentState
+        
+        XCTAssertNotNil(actual as? FastForwardState, "Invalid Transition found. This is a bug in your logic. The expected type is \(type(of: expected)).")
     }
 }

@@ -11,13 +11,14 @@ struct StopState: State {
     let id = "Stop"
     
     func apply(event: AudioPlayerEvent) -> any State {
-        print("Starting audio.")
         
-        return switch event {
+        switch event {
         case .playing:
-            PlayState()
+            print("Starting audio.")
+            return PlayState()
         default:
-            self
+            print("[Invalid Transition for \(self)] - \(event)")
+            return self
         }
     }
 }

@@ -17,6 +17,7 @@ struct RewindState: State {
             print("Resume Audio")
             return PlayState()
         default:
+            print("[Invalid Transition for \(self)] - \(event)")
             return self
         }
     }

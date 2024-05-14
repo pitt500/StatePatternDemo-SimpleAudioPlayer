@@ -19,6 +19,7 @@ struct PauseState: State {
             print("Stopping Audio")
             return StopState()
         default:
+            print("[Invalid Transition for \(self)] - \(event)")
             return self
         }
     }
