@@ -25,4 +25,8 @@ class SimpleAudioPlayer {
     func rewind() {
         machine.handle(event: .rewinding)
     }
+    
+    func fastForward() {
+        machine.handle(event: .forwarding)
+    }
 }

@@ -88,6 +88,27 @@ final class SimpleAudioPlayer_StatePatternTest: XCTestCase {
         XCTAssertNotNil(actual as? PlayState, "Invalid Transition found. This is a bug in your logic. The expected type is \(type(of: expected)).")
     }
     
+    func testFromPlayToFastForward() {
+        let expected = FastForwardState()
+        
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .forwarding)
+        let actual = stateMachine.currentState
+        
+        XCTAssertNotNil(actual as? FastForwardState, "Invalid Transition found. This is a bug in your logic. The expected type is \(type(of: expected)).")
+    }
+    
+    func testFromFastForwardToPlay() {
+        let expected = PlayState()
+        
+        stateMachine.handle(event: .playing)
+        stateMachine.handle(event: .forwarding)
+        stateMachine.handle(event: .playing)
+        let actual = stateMachine.currentState
+        
+        XCTAssertNotNil(actual as? PlayState, "Invalid Transition found. This is a bug in your logic. The expected type is \(type(of: expected)).")
+    }
+    
     // MARK: Invalid States
     func testFromStopToPause() {
         let expected = StopState()

@@ -1,5 +1,5 @@
 //
-//  RewindState.swift
+//  FastForwardState.swift
 //  SimpleAudioPlayer_StatePattern
 //
 //  Created by Pedro Rojas on 14/05/24.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct RewindState: State {
-    var id = "Rewind"
+struct FastForwardState: State {
+    var id = "FastForward"
     
     func apply(event: AudioPlayerEvent) -> any State {
 

@@ -21,6 +21,9 @@ struct PlayState: State {
         case .rewinding:
             print("Rewinding...")
             return RewindState()
+        case .forwarding:
+            print("Fast Forwarding...")
+            return FastForwardState()
         default:
             return self
         }

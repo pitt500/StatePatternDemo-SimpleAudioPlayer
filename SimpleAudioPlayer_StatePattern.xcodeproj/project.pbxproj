@@ -25,6 +25,8 @@
 		B52A1C232BF3360F00790FD9 /* AudioPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A1C052BF2E3C900790FD9 /* AudioPlayerEvent.swift */; };
 		B52A1C252BF3B0BF00790FD9 /* RewindState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A1C242BF3B0BF00790FD9 /* RewindState.swift */; };
 		B52A1C262BF3B17C00790FD9 /* RewindState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A1C242BF3B0BF00790FD9 /* RewindState.swift */; };
+		B52A1C282BF3D66400790FD9 /* FastForwardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A1C272BF3D66400790FD9 /* FastForwardState.swift */; };
+		B52A1C292BF3D66400790FD9 /* FastForwardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A1C272BF3D66400790FD9 /* FastForwardState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +54,7 @@
 		B52A1C162BF3356000790FD9 /* SimpleAudioPlayer_StatePatternTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleAudioPlayer_StatePatternTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52A1C182BF3356000790FD9 /* SimpleAudioPlayer_StatePatternTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAudioPlayer_StatePatternTest.swift; sourceTree = "<group>"; };
 		B52A1C242BF3B0BF00790FD9 /* RewindState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewindState.swift; sourceTree = "<group>"; };
+		B52A1C272BF3D66400790FD9 /* FastForwardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastForwardState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,7 @@
 				B52A1C012BF2E3A000790FD9 /* PlayState.swift */,
 				B52A1C032BF2E3B000790FD9 /* PauseState.swift */,
 				B52A1C242BF3B0BF00790FD9 /* RewindState.swift */,
+				B52A1C272BF3D66400790FD9 /* FastForwardState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -216,6 +220,7 @@
 				B52A1C062BF2E3C900790FD9 /* AudioPlayerEvent.swift in Sources */,
 				B52A1BF22BF2E0D000790FD9 /* main.swift in Sources */,
 				B52A1C252BF3B0BF00790FD9 /* RewindState.swift in Sources */,
+				B52A1C282BF3D66400790FD9 /* FastForwardState.swift in Sources */,
 				B52A1C002BF2E38E00790FD9 /* StopState.swift in Sources */,
 				B52A1BF92BF2E32800790FD9 /* SimpleAudioPlayer.swift in Sources */,
 				B52A1BFE2BF2E37500790FD9 /* State.swift in Sources */,
@@ -232,6 +237,7 @@
 				B52A1C232BF3360F00790FD9 /* AudioPlayerEvent.swift in Sources */,
 				B52A1C1F2BF3360300790FD9 /* StopState.swift in Sources */,
 				B52A1C262BF3B17C00790FD9 /* RewindState.swift in Sources */,
+				B52A1C292BF3D66400790FD9 /* FastForwardState.swift in Sources */,
 				B52A1C222BF3360C00790FD9 /* AudioPlayerStateMachine.swift in Sources */,
 				B52A1C192BF3356000790FD9 /* SimpleAudioPlayer_StatePatternTest.swift in Sources */,
 				B52A1C202BF3360600790FD9 /* State.swift in Sources */,
