@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AudioPlayerEvent: Hashable {
+enum AudioPlayerEvent {
     case stopping
     case pausing
     case playing
