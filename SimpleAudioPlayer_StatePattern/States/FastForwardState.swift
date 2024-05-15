@@ -8,7 +8,7 @@
 import Foundation
 
 struct FastForwardState: State {
-    var id = "FastForward"
+    let id = "FastForward"
     
     func apply(event: AudioPlayerEvent) -> any State {
 

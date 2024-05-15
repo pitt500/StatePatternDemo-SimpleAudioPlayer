@@ -8,7 +8,7 @@
 import Foundation
 
 struct RewindState: State {
-    var id = "Rewind"
+    let id = "Rewind"
     
     func apply(event: AudioPlayerEvent) -> any State {
 
