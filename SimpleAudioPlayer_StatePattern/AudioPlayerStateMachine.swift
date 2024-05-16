@@ -8,7 +8,7 @@
 import Foundation
 
 class AudioPlayerStateMachine {
-    lazy private(set) var currentState: any State = StopState()
+    private(set) var currentState: any State = StopState()
     
     func handle(event: AudioPlayerEvent) {
         let newState = currentState.apply(event: event)
